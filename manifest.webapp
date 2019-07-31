@@ -22,8 +22,7 @@
   "default_locale": "en-US",
 "permissions": {
   "geolocation": {
-    "description": "Required for geolocation lat, long",
-    "access": "readonly"
+    "description": "Required for geolocation lat, long"
     }
   }
 }
