@@ -1,0 +1,29 @@
+{
+  "version": "1.0.0",
+  "name": "Latitude, Longitude App for KaiOS",
+  "description": "Simple location detector",
+  "type": "web",
+  "launch_path": "/index.html",
+  "icons": {
+    "56": "/assets/icons/kaios_56.png",
+    "112": "/assets/icons/kaios_112.png"
+  },
+  "developer": {
+    "name": "Christophe Hollebeke",
+    "url": "https://webkust.be"
+  },
+  "locales": {
+    "en-US": {
+      "name": "Latitude, Longitude App for KaiOS",
+      "subtitle": "Simple location detector",
+      "description": "Simple location detector"
+    }
+  },
+  "default_locale": "en-US",
+"permissions": {
+  "geolocation": {
+    "description": "Required for geolocation lat, long",
+    "access": "readonly"
+    }
+  }
+}
