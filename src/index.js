@@ -1,21 +1,3 @@
-// import Softkey from "./js/softkey";
-// import Navigation from "./js/navigation";
-
-// document.addEventListener("keydown", event => {
-//   switch (event.key) {
-//     case "Enter":
-//       return Softkey.Enter(event);
-//     case "ArrowDown":
-//       return Navigation.Down(event);
-//     case "ArrowUp":
-//       return Navigation.Up(event);
-//     case "SoftRight":
-//       return Softkey.SoftRight(event);
-//     default:
-//       return;
-//   }
-// });
-
 const titel = document.querySelector('#text');
 const geo = document.querySelector('#geo');
 
@@ -29,21 +11,32 @@ const softkeyCallback = {
     
     center: function() {
       titel.textContent = 'Je hebt op ENTER gedrukt';
+    
+    var options = {
+      enableHighAccuracy: true,
+      timeout: 10000,
+      maximumAge: 0
+    };
+
+    function success(pos) {
+      var crd = pos.coords;
       
-      getLocation();
+      geo.innerHTML = "Latitude: " + crd.latitude +
+    "<br>Longitude: " + crd.longitude;
 
-      function getLocation() {
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
-      } else {
-        geo.innerHTML = "Geolocation is not supported by this browser.";
-      }
+      console.log('Your current position is:');
+      console.log(`Latitude : ${crd.latitude}`);
+      console.log(`Longitude: ${crd.longitude}`);
+      console.log(`More or less ${crd.accuracy} meters.`);
     }
 
-    function showPosition(position) {
-      geo.innerHTML = "Latitude: " + position.coords.latitude +
-      "<br>Longitude: " + position.coords.longitude;
+    function error(err) {
+      console.warn(`ERROR(${err.code}): ${err.message}`);
+      geo.innerHTML = "Geolocation is not supported by this browser.";
     }
+
+    navigator.geolocation.getCurrentPosition(success, error, options);
+
       console.log('You click on Enter');
     },
     
@@ -52,6 +45,8 @@ const softkeyCallback = {
       console.log('You click on SoftRight');
     }
 };
+
+
 function handleKeyDown(evt) {
     switch (evt.key) {
         case 'SoftLeft':
