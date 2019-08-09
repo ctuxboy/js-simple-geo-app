@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!--<meta name="theme-color" content="rgb(106, 0, 128)" />-->
+  <title>112</title>
+  <link rel="stylesheet" type="text/css" href="src/css/header.css" />
+  <link rel="stylesheet" type="text/css" href="src/css/softkey.css" />
+  <link rel="stylesheet" type="text/css" href="src/css/112.css" />
+
+  <!--Font Awesome JS-->
+  <script src="src/js/all.js"></script>
+</head>
+
+<body>
+  <div id="root">
+    <div class="row">
+      <div class="col is-text-center header">EMERGENCY CALL</div>
+
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col is-text-center">
+          <a class="emergency-button items" tabIndex="0" href="tel:+123456" onclick="return confirm('Are you sure calling 112?')">
+            <img style="width:80%" src="assets/images/112-button.svg">
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col is-text-center">
+
+          <!-- Show Lat, lng, accuracy -->
+          <div class="sec" id="geo">
+            <div class="spinner"></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- KaiAds -->
+    <div id="ad-container"></div>
+
+    <div id="softkey">
+      <label id="left"><i class="fas fa-map-marker-alt"></i></label>
+      <label id="center">SELECT</label>
+      <label id="right"><i class="fas fa-info-circle"></i></label>
+    </div>
+  </div>
+
+
+  <script src="src/index.js"></script>
+  <script src="src/js/kaiads.min.js"></script>
+  <script src="src/js/kaiad.js"></script>
+</body>
+
+</html>
